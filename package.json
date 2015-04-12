@@ -1,0 +1,9 @@
+{
+    "name": "Campervibe_Maintenance",
+    "version": "0.0.1",
+    "description": "Service for managing maintenance of vehicles in the Campervibe system",
+    "author": "Paul Davies",
+    "dependencies" : {
+        "express": "~4.8.8"
+    }
+}
