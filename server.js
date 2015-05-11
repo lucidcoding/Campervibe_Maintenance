@@ -1,7 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var mongoose = require('./config/mongoose'),
-    express = require('./config/express');
+var mongoose = require('./server/config/mongoose'),
+    express = require('./server/config/express');
 
 var db = mongoose();
 var app = express();
