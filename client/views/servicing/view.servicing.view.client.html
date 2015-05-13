@@ -1,0 +1,24 @@
+<div data-ng-controller="servicingController" data-ng-init="view()">
+ 	<md-toolbar class="md-default-theme">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="More" ng-click="controllerHelper.back()">
+                <ng-md-icon icon="navigate_before" size="24"></ng-md-icon>
+            </md-button>
+            <h1>Servicing</h1>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="More">
+                <ng-md-icon icon="more_vert" size="24"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+                <ng-md-icon icon="close" size="24"></ng-md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+	<md-content>
+		<div>{{servicing._id}}</div>
+		<div>{{servicing.vehicleId}}</div>
+		<div>{{servicing.checkInTime}}</div>
+		<div>{{servicing.checkOutTime}}</div>
+		<div>{{servicing.notes}}</div>
+	</md-content>
+</div>

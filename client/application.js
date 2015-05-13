@@ -1,21 +1,24 @@
 var app = angular.module('campervibeMaintenance', [
+  'campervibeMaintenance.servicingController',
+  'campervibeMaintenance.servicingService',
+  'ngMaterial',
   'ngRoute',
+  'ngSanitize'
 ]);
 
-app.config(['$routeProvider',
-function ($routeProvider) {
+app.config(['$routeProvider', '$mdThemingProvider',
+function ($routeProvider, $mdThemingProvider) {
 
     //var version = getVersion();
 
     $routeProvider
-        .when("/servicing/list/", { templateUrl: "views/list.servicing.view.html"})
+        .when("/servicing/list/", { templateUrl: "views/servicing/list.servicing.view.client.html"})
+        .when("/servicing/view/:servicingId", { templateUrl: "views/servicing/view.servicing.view.client.html"})
         .otherwise({ redirectTo: '/servicing/list' });
 
-    /*
     $mdThemingProvider.theme('default')
-        .primaryPalette('grey')
-        .accentPalette('grey');
-    */
+        .primaryPalette('indigo')
+        .accentPalette('purple');
 
     /*
     $mdThemingProvider.theme('header')
