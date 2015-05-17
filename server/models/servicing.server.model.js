@@ -6,7 +6,7 @@ var ServicingSchema = new Schema({
         type: String
     },
     checkInTime: {
-        type: String,
+        type: Date,
         //default: Date.now
     },
     checkOutTime: {

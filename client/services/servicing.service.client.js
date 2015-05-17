@@ -21,10 +21,11 @@ function ($http) {
         });
     };
 
-    servicingService.checkIn = function () {
+    servicingService.checkIn = function (data) {
         return $http({
             method: 'POST',
             url: 'servicing/checkin',
+            data: data,
             withCredentials: true
         });
     };

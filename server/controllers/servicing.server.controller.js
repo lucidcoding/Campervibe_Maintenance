@@ -15,7 +15,7 @@ exports.create = function(req, res, next) {
 exports.checkIn = function(req, res, next) {
     var servicing = new Servicing();
     servicing.vehicleId = req.body.vehicleId;
-    servicing.checkInTime = Date.now;
+    servicing.checkInTime = Date.now();
     servicing.mileage = req.body.mileage;
 
     servicing.save(function(err) {
