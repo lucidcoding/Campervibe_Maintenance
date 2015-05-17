@@ -1,0 +1,38 @@
+<div data-ng-controller="servicingController" data-ng-init="checkIn()">
+ 	<md-toolbar class="md-default-theme">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="More" ng-click="controllerHelper.back()">
+                <ng-md-icon icon="navigate_before" size="24"></ng-md-icon>
+            </md-button>
+            <h1>Servicing</h1>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="More">
+                <ng-md-icon icon="more_vert" size="24"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+                <ng-md-icon icon="close" size="24"></ng-md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+	<md-content layout-padding layout="column" layout-sm="column">
+
+		<md-select placeholder="Vehicle" ng-model="someVal">
+			<md-option ng-repeat="vehicle in vehicles" value="{{vehicle.id}}">{{vehicle.name}}</md-option>
+		</md-select>
+	    <!--<md-input-container>
+	      	<label>Vehicle</label>
+
+	      	<select ng-model="checkInRequest.vehicleId" >
+	      		<option ng-repeat="vehicle in vehicles" value="{{vehicle.id}}">{{vehicle.name}}</select>
+	      	</select>
+	    </md-input-container>-->
+	    <md-input-container>
+	      	<label>Mileage</label>
+	      	<input ng-model="checkInRequest.mileage" type="number" />
+	    </md-input-container>
+	    <div layout="row" layout-align="left center" layout-margin >
+		      <md-button class="md-raised md-primary" ng-click="submit()">Submit</md-button>
+		      <md-button class="md-raised" ng-click="cancel()">Cancel</md-button>
+    	</div>
+  	</md-content>
+</div>

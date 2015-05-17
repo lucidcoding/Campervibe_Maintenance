@@ -4,18 +4,11 @@ function ($http) {
 
     var servicingService = {};
 
-    servicingService.list = function (args) {
-
+    servicingService.list = function () {
         return $http({
             method: 'GET',
             url: 'servicing',
             withCredentials: true
-        })
-        .success(function (response) {
-            args.success(response);
-        })
-        .error(function (data, status, headers, config) {
-            args.error(data.Message);
         });
     };
 
@@ -25,13 +18,16 @@ function ($http) {
             method: 'GET',
             url: 'servicing/' + args.id,
             withCredentials: true
-        })
-        .success(function (response) {
-            args.success(response);
-        })
-        .error(function (data, status, headers, config) {
-            args.error(data.Message);
         });
     };
+
+    servicingService.checkIn = function () {
+        return $http({
+            method: 'POST',
+            url: 'servicing/checkin',
+            withCredentials: true
+        });
+    };
+
     return servicingService;
 }]);

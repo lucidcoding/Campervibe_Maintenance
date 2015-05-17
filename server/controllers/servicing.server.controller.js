@@ -12,6 +12,21 @@ exports.create = function(req, res, next) {
     });
 };
 
+exports.checkIn = function(req, res, next) {
+    var servicing = new Servicing();
+    servicing.vehicleId = req.body.vehicleId;
+    servicing.checkInTime = Date.now;
+    servicing.mileage = req.body.mileage;
+
+    servicing.save(function(err) {
+        if(err) {
+            return next (err);
+        } else {
+            res.json(servicing);
+        }
+    });
+};
+
 exports.list = function(req, res, next) {
     Servicing.find({}, function (err, servicings) {
         if(err) {

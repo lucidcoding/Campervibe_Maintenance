@@ -2,10 +2,22 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ServicingSchema = new Schema({
-    vehicleId: String,
-    checkInTime: String,
-    checkOutTime: String,
-    notes: String
+    vehicleId: {
+        type: String
+    },
+    checkInTime: {
+        type: String,
+        //default: Date.now
+    },
+    checkOutTime: {
+        type: String
+    },
+    mileage: {
+        type: Number
+    },
+    notes: {
+        type: String
+    }
 });
 
 mongoose.model('Servicing', ServicingSchema);
