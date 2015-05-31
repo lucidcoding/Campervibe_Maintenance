@@ -7,7 +7,7 @@ function ($http) {
     servicingService.list = function () {
         return $http({
             method: 'GET',
-            url: 'servicing',
+            url: 'servicing/list',
             withCredentials: true
         });
     };

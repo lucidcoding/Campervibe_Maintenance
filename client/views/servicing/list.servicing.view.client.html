@@ -16,8 +16,13 @@
     </md-toolbar>
 	<md-content>
 		<md-list>
-			<md-list-item ng-repeat="servicing in servicings" ng-click="navigateTo('servicing/view/' + servicing._id)">
-				{{servicing._id}}
+			<md-list-item class="md-3-line" ng-repeat="servicing in servicings" ng-click="navigateTo('servicing/view/' + servicing._id)">
+        		<img ng-src="" class="md-avatar"  />
+        		<div class="md-list-item-text">
+          			<h3>{{ servicing._id }}</h3>
+          			<p>Check In: {{ servicing.checkInTime }}</p>
+          			<p>Check Out: {{ servicing.checkOutTime }}</p>
+        		</div>
 				<md-divider ng-show="!$last"></md-divider>
 			</md-list-item>
 		</md-list>

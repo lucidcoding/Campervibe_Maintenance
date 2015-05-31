@@ -1,6 +1,7 @@
 var app = angular.module('campervibeMaintenance', [
   'campervibeMaintenance.servicingController',
   'campervibeMaintenance.servicingService',
+  'campervibeMaintenance.vehicleService',
   'ngMaterial',
   'ngRoute',
   'ngSanitize'
